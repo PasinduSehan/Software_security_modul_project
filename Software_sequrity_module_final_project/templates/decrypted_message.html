@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Decrypt a Message</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/styles.css') }}">
+</head>
+<body>
+    <h2>Decrypt a Message</h2>
+    <form method="POST" action="{{ url_for('decrypt_message') }}">
+
+        <label for="decryption-email">Email address</label>
+        <input type="text" id="decryption-email" name="decryption-email" required>
+        <br>
+        <label for="decryption-password">Password</label>
+        <input type="password" id="decryption-password" name="decryption-password" required>
+        <br>
+        <button type="submit">Decrypt</button>
+        {% if message %}
+            <h3>Decrypted Message</h3>
+            <p>{{ message }}</p>
+        {% endif %}
+
+        <br><br><br>
+        <a href="{{ url_for('encrypt_page') }}"><button type="button">Back</button></a>
+    </form>
+</body>
+</html>

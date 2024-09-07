@@ -1,0 +1,50 @@
+<!-- Encrypt Message Page -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Encrypt a Message</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/styles.css') }}">
+</head>
+<body>
+    <h2>Encrypt a Message</h2>
+    <form id="encryptForm" method="POST" action="{{ url_for('encrypt_message') }}">
+        <label for="original-message">Message:</label>
+        <textarea id="original-message" name="original-message" placeholder="Type your message here..." maxlength="500" required></textarea>
+
+        <label for="role">Role:</label>
+        <select id="role" name="role" required>
+            <option value="User">User</option>
+            <option value="Admin">Admin</option>
+        </select>
+
+        <button type="submit">Encrypt</button>
+        <div id="feedback"></div>
+    </form>
+
+    <br>
+    <a href="{{ url_for('decrypt_message') }}"><button type="button">Decrypt a Message</button></a>
+
+
+    <script>
+    document.getElementById('encryptForm').addEventListener('submit', function(event) {
+        event.preventDefault();
+
+        var formData = new FormData(this);
+        fetch('{{ url_for("encrypt_message") }}', {
+            method: 'POST',
+            body: formData
+        })
+        .then(response => response.text())
+        .then(data => {
+            document.getElementById('feedback').innerHTML = '<h3>Encrypted Message</h3><p>' + data + '</p>';
+        })
+        .catch(error => {
+            console.error('Error:', error);
+            document.getElementById('feedback').innerHTML = '<p>An error occurred.</p>';
+        });
+    });
+    </script>
+</body>
+</html>

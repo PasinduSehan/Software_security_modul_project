@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sign Up</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/styles.css') }}">
+</head>
+<body>
+    <h2>Create an Account</h2>
+    <form method="POST" action="{{ url_for('handle_signup') }}">
+        <label for="email">Email Address</label>
+        <input type="email" id="email" name="email" placeholder="Enter your email" required>
+
+        <label for="password">Password</label>
+        <input type="password" id="password" name="password" placeholder="Create a strong password" required>
+        <small>Password must be at least 8 characters long and include an uppercase letter, a number, and a special character.</small>
+
+        <label for="role">Role</label>
+        <select id="role" name="role" required>
+            <option value="User">User</option>
+            <option value="Admin">Admin</option>
+        </select>
+
+        <button type="submit">Sign Up</button>
+
+        <p>Already have an account? <a href="{{ url_for('login') }}">Login</a></p>
+    </form>
+</body>
+</html>

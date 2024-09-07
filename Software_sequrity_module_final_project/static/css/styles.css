@@ -1,0 +1,108 @@
+/* General Styles */
+body {
+    font-family: 'Poppins', sans-serif;
+    background-color: #e0e0e0; /* Light grey for a neutral background */
+    color: #212121; /* Darker grey for better readability */
+    margin: 0;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    min-height: 100vh;
+    padding: 20px;
+}
+
+h2 {
+    color: #212121; /* Dark grey for better contrast */
+    font-size: 2.4em;
+    margin-bottom: 30px;
+    text-align: center;
+    font-weight: 700; /* Bolder font weight */
+}
+
+p {
+    color: #424242; /* Medium dark grey */
+    font-size: 1.2em;
+    margin-bottom: 20px;
+    text-align: center;
+}
+
+/* Form Styles */
+form {
+    background-color: #ffffff; /* White */
+    padding: 40px;
+    border-radius: 12px; /* Slightly reduced radius for a firmer look */
+    box-shadow: 0 6px 18px rgba(0, 0, 0, 0.2); /* Slightly darker shadow for better contrast */
+    width: 100%;
+    max-width: 500px; /* Slightly larger form for more spacious feel */
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+label {
+    display: block;
+    margin-bottom: 12px;
+    color: #333333; /* Darker grey for labels */
+    font-weight: 600; /* Slightly bolder font weight */
+    font-size: 1.2em;
+}
+
+input, select, textarea {
+    width: 100%;
+    padding: 16px;
+    margin-bottom: 20px;
+    border: 1px solid #bdbdbd; /* Medium grey border */
+    border-radius: 8px; /* Slightly smaller radius for a firmer look */
+    background-color: #ffffff; /* White background */
+    color: #333333;
+    font-size: 1em;
+    transition: border-color 0.3s ease, background-color 0.3s ease;
+}
+
+input:focus, select:focus, textarea:focus {
+    outline: none;
+    border-color: #1976d2; /* Blue border for focus */
+    background-color: #e3f2fd; /* Light blue background on focus */
+}
+
+button {
+    width: 100%;
+    padding: 16px;
+    background-color: #1976d2; /* Strong blue */
+    border: none;
+    border-radius: 8px;
+    color: #ffffff;
+    font-size: 1.2em;
+    cursor: pointer;
+    transition: background-color 0.3s ease, transform 0.2s ease;
+}
+
+button:hover {
+    background-color: #1565c0; /* Slightly darker blue */
+    transform: translateY(-2px); /* Subtle lift effect */
+}
+
+a {
+    color: #1976d2; /* Strong blue */
+    text-decoration: none;
+    margin-top: 20px;
+    display: inline-block;
+    font-size: 1em;
+}
+
+a:hover {
+    text-decoration: underline;
+}
+
+/* Responsive Styles */
+@media (max-width: 600px) {
+    form {
+        padding: 20px;
+        max-width: 100%;
+    }
+
+    h2 {
+        font-size: 1.8em;
+    }
+}
